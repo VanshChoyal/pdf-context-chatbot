@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chatbot.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css" rel="stylesheet">
+    <style>
+        .message.bot pre {
+            background: #2d2d2d;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .message.bot code {
+            font-family: 'Fira Code', monospace;
+            font-size: 14px;
+        }
+        .message.bot p {
+            margin: 8px 0;
+        }
+        .message.bot ul, .message.bot ol {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h3>Files</h3>
+                <button class="add-file-btn" >+</button>
+            </div>
+            <ul id="file-list">
+            </ul>
+        </div>
+
+        <div class="chat-area">
+            <div id="messages" class="messages">
+            </div>
+            <div class="input-area">
+                <input id="chat-input" type="text" placeholder="Type a message...">
+                <button id="send-btn"><i class="fas fa-paper-plane"></i> Send</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="credits">
+        <p>Made by Vansh Choyal</p>
+        <p class="date">October 19, 2025</p>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/12.3.2/markdown-it.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-javascript.min.js"></script>
+    <script src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
+</body>
+</html>
